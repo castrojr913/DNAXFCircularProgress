@@ -4,21 +4,17 @@
 
     public class XFCircleProgress : BoxView
     {
-        public readonly BindableProperty BackColorProperty = BindableProperty.Create(nameof(BackColor), typeof(Color), typeof(XFCircleProgress), Color.Transparent);
-        public readonly BindableProperty ForeColorProperty = BindableProperty.Create(nameof(ForeColor), typeof(Color), typeof(XFCircleProgress), Color.Transparent);
-        public readonly BindableProperty BarHeightProperty = BindableProperty.Create(nameof(BarHeight), typeof(double), typeof(XFCircleProgress), default(double));
-        public readonly BindableProperty MinimunProperty = BindableProperty.Create(nameof(Minimun), typeof(int), typeof(XFCircleProgress), default(int));
-        public readonly BindableProperty MaximunProperty = BindableProperty.Create(nameof(Maximun), typeof(int), typeof(XFCircleProgress), default(int));
-        public readonly BindableProperty ValueProperty = BindableProperty.Create(nameof(Value), typeof(int), typeof(XFCircleProgress), default(int));
-        public readonly BindableProperty AnimationDurationProperty = BindableProperty.Create(nameof(AnimationDuration), typeof(int), typeof(XFCircleProgress), default(int));
-        public readonly BindableProperty TextSizeProperty = BindableProperty.Create(nameof(TextSize), typeof(int), typeof(XFCircleProgress), default(int));
-        public readonly BindableProperty TextMarginProperty = BindableProperty.Create(nameof(TextMargin), typeof(int), typeof(XFCircleProgress), default(int));
-        public readonly BindableProperty TextProperty = BindableProperty.Create(nameof(Text), typeof(string), typeof(XFCircleProgress), string.Empty);
-        public readonly BindableProperty TextColorProperty = BindableProperty.Create(nameof(TextColor), typeof(Color), typeof(XFCircleProgress), Color.Black);
-
-        public XFCircleProgress()
-        {
-        }
+        public static readonly BindableProperty BackColorProperty = BindableProperty.Create(nameof(BackColor), typeof(Color), typeof(XFCircleProgress), Color.Transparent);
+        public static readonly BindableProperty ForeColorProperty = BindableProperty.Create(nameof(ForeColor), typeof(Color), typeof(XFCircleProgress), Color.Transparent);
+        public static readonly BindableProperty BarHeightProperty = BindableProperty.Create(nameof(BarHeight), typeof(double), typeof(XFCircleProgress), default(double));
+        public static readonly BindableProperty MinimunProperty = BindableProperty.Create(nameof(Minimun), typeof(int), typeof(XFCircleProgress), default(int));
+        public static readonly BindableProperty MaximunProperty = BindableProperty.Create(nameof(Maximun), typeof(int), typeof(XFCircleProgress), default(int));
+        public static readonly BindableProperty ValueProperty = BindableProperty.Create(nameof(Value), typeof(int), typeof(XFCircleProgress), default(int));
+        public static readonly BindableProperty AnimationDurationProperty = BindableProperty.Create(nameof(AnimationDuration), typeof(int), typeof(XFCircleProgress), default(int));
+        public static readonly BindableProperty TextSizeProperty = BindableProperty.Create(nameof(TextSize), typeof(int), typeof(XFCircleProgress), default(int));
+        public static readonly BindableProperty TextMarginProperty = BindableProperty.Create(nameof(TextMargin), typeof(int), typeof(XFCircleProgress), default(int));
+        public static readonly BindableProperty TextProperty = BindableProperty.Create(nameof(Text), typeof(string), typeof(XFCircleProgress), string.Empty);
+        public static readonly BindableProperty TextColorProperty = BindableProperty.Create(nameof(TextColor), typeof(Color), typeof(XFCircleProgress), Color.Black);
 
         public Color BackColor
         {
@@ -76,7 +72,7 @@
 
         public string Text
         {
-            get { return GetValue(TextProperty).ToString(); }
+            get { return GetValue(TextProperty)?.ToString(); }
             set { SetValue(TextProperty, value); }
         }
 
